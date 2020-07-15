@@ -1,7 +1,14 @@
 import React  from 'react';
+import {v1 as uuid}  from 'uuid';
 import AddTask  from './AddTask';
 class Todo extends React.Component{
-
+ 
+  constructor(props) {
+    super(props)
+  
+    this.addNewTask = this.addNewTask.bind(this);
+  }
+  
     state = {
                Tasks:[]
           }
@@ -14,6 +21,23 @@ class Todo extends React.Component{
     
     }
 
+    addNewTask=(newTask)=>{
+      var Tasks = this.state.Tasks
+      Tasks.push({id:uuid(),task:newTask})
+        this.setState({Tasks: Tasks})
+      }
+
+      handleRemove=(id)=>{
+       
+        console.log(id)
+        var Tasks = this.state.Tasks
+        if (id !== -1) {
+          Tasks.splice(id, 1);
+          this.setState({Tasks: Tasks});
+        }
+         
+
+      }
 
     render(){
     return(
@@ -31,7 +55,7 @@ class Todo extends React.Component{
                
            return (
             <div key={id}>
-          <li className="list-group-item" key={task.id}>{task.task} <button type="button" class="close" aria-label="Close">
+          <li className="list-group-item" key={task.id}>{task.task} <button type="button" class="close" onClick={()=>this.handleRemove(id)} aria-label="Close">
                                    <span aria-hidden="true">&times;</span>
                                           </button></li> 
             </div>
@@ -41,7 +65,7 @@ class Todo extends React.Component{
           </ul>
            </div>
                <div className="boreder4">  
-           <AddTask/>
+           <AddTask addNewTasks={this.addNewTask}/>
            </div>
          </div>
      
