@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 const AddTask=({addNewTasks})=>{
-
+  // miniscule
   const [AddTaskss,setAddTask]=useState('')
 
   const changeSub=(e)=>{
@@ -9,7 +9,7 @@ const AddTask=({addNewTasks})=>{
       e.preventDefault()
       addNewTasks(AddTaskss)
     }else{
-      e.preventDefault()
+      e.preventDefault()  // repetition
       alert('entre caratere')
     }     
     setAddTask('')
