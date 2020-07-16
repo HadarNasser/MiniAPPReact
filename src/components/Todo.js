@@ -8,7 +8,8 @@ class Todo extends React.Component{
   
     this.addNewTask = this.addNewTask.bind(this);
   }
-  
+      
+ // miniscule
     state = {
                Tasks:[]
           }
@@ -22,13 +23,14 @@ class Todo extends React.Component{
     }
 
     addNewTask=(newTask)=>{
+         //miniscule
       var Tasks = this.state.Tasks
       Tasks.push({id:uuid(),task:newTask})
         this.setState({Tasks: Tasks})
       }
 
       handleRemove=(id)=>{
-       
+           // index not id
         console.log(id)
         var Tasks = this.state.Tasks
         if (id !== -1) {
@@ -52,7 +54,7 @@ class Todo extends React.Component{
                   <ul className="list-group">
               {
            this.state.Tasks.map((task,id)=>{
-               
+                             // index not id
            return (
             <div key={id}>
           <li className="list-group-item" key={task.id}>{task.task} <button type="button" class="close" onClick={()=>this.handleRemove(id)} aria-label="Close">
