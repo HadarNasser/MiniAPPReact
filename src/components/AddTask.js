@@ -5,11 +5,10 @@ const AddTask=({addNewTasks})=>{
   const [AddTaskss,setAddTask]=useState('')
 
   const changeSub=(e)=>{
-    if(AddTaskss!=='') {
-      e.preventDefault()
+    e.preventDefault()//une seule fois
+    if(AddTaskss!=="") {
       addNewTasks(AddTaskss)
     }else{
-      e.preventDefault()
       alert('entre caratere')
     }     
     setAddTask('')
@@ -17,16 +16,20 @@ const AddTask=({addNewTasks})=>{
   } 
       return (
 
-       
+        <form onSubmit={changeSub}>
 
-          <form className="form-inline" onSubmit={changeSub}>
-           <div className="form-group mx-sm-2 mb-2">
-          <input type="text"  className="form-control" value={AddTaskss}  placeholder="ENTRE TASK" onChange={(e)=>setAddTask(e.target.value)}/>
-           </div>
-           <button type="submit" className="btn btn-primary mb-2">Confirm</button>
-          </form>
+        <div className="input-group mb-3">
+        <input type="text" className="form-control ml-2"  placeholder="ENTRE ITEM" value={AddTaskss} onChange={(e)=>setAddTask(e.target.value)}/>
+        <div className="input-group-append ml-2">
+          <button className="btn btn-outline-secondary mr-2" type="submit">Submit</button>
+        </div>
+        </div>
+
+        </form>
+           
+
+
       )
     }
-
 
 export default AddTask;

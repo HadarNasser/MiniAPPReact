@@ -11,25 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.boreder1{
+.todo-header{
   width: 400px;
   height:50px;
-  background-color:aquamarine
+  border: 0.5px solid grey;
 
 }
 h5{
   text-align: center;
-}
-.boreder0{
-margin-left: 300px;
-}
-.boreder2{
-  width: 400px;
-}
-.boreder3{
-  width: 400px;
-}
-.boreder4{
   margin-top: 10px;
 }
+.todo-container{
+margin-left: 400px;
+border: 0.5px solid grey;
+width: 400px;
+}
+.list-todo-size{
+  width: 400px;
+}
 
+.todo-footer{
+  margin-top: 10px;
+}
+.todo-list-size{
+  height: 60px;
+}

@@ -5,10 +5,6 @@ import Todo from './components/Todo';
 
 function App() {
   return (
-    <div className="margiTop">
-     
-      <h1>Salut!,c'est ma première Application en react</h1>
-
    
     <div className="App">
      
@@ -16,7 +12,7 @@ function App() {
       
     </div>
 
-    </div>
+ 
   );
 }
 
